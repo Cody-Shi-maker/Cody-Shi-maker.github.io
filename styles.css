@@ -1,157 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音乐人个人网站 | Personal Website of Musician</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <!-- 网页头部 -->
-    <header>
-        <h1>大家好，我是石逸飞 - 音乐人</h1>
-    </header>
-
-    <!-- 主要内容和留言区域的外层容器 -->
-    <div class="main-container">
-        <!-- 网页主要内容 -->
-        <main id="main-content">
-            <!-- 个人基本信息 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('basic-info')">基本信息 <i>| Basic Information</i></h2>
-                <div id="basic-info" class="section-content">
-                    <p><strong>姓名</strong>：石逸飞 <i>| <strong>Name</strong>: Shi Yifei</i></p>
-                    <p><strong>年龄</strong>：19  <i>| <strong>Age</strong>: 19</i></p>
-                    <p><strong>职业</strong>：音乐人 <i>| <strong>Occupation</strong>: Musician</i></p>
-                    <p><strong>所在地</strong>：湖北武汉 <i>| <strong>Location</strong>: Wuhan, Hubei</i></p>
-                </div>
-            </div>
-
-            <!-- 个人兴趣爱好 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('hobbies')">兴趣爱好 <i>| Hobbies</i></h2>
-                <div id="hobbies" class="section-content">
-                    <h3>阅读 <i>| Reading</i></h3>
-                    <p>阅读，是我精神世界的“旅行”。我尤其喜欢历史和科幻类书籍，前者让我在浩瀚的历史中看到智慧，后者激发了我对未知世界的探索欲望。 <i>| Reading is like a "journey" in my spiritual world. I especially like history and science fiction books. The former allows me to see wisdom in the vast history, and the latter stimulates my desire to explore the unknown world.</i></p>
-                    <h3>运动 <i>| Sports</i></h3>
-                    <p>每周，我都会通过跑步和羽毛球运动释放压力，感受身体的活力和精神的放松。 <i>| Every week, I relieve stress through running and playing badminton, and feel the vitality of my body and the relaxation of my mind.</i></p>
-                    <h3>音乐 <i>| Music</i></h3>
-                    <p>音乐是我的生命，创作和演奏音乐是我表达情感的方式。 <i>| Music is my life. Creating and performing music is my way of expressing emotions.</i></p>
-                </div>
-            </div>
-
-            <!-- 音乐感受经历 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('experience')">音乐感受经历 <i>| Musical Experiences</i></h2>
-                <div id="experience" class="section-content">
-                    <p>从小，音乐就像一束光，照亮了我内心最柔软的角落。那悠扬的旋律、动人的音符，如同灵动的精灵，在我的灵魂深处翩翩起舞。我清晰地记得第一次接触钢琴时的情景，当指尖轻轻触碰黑白琴键，那清脆的声响瞬间让我沉醉其中，仿佛开启了一个全新的世界。</p>
-                    <p>随着年龄的增长，我开始尝试创作属于自己的音乐。每一次创作都是一场心灵的对话，我将生活中的喜怒哀乐、梦想与憧憬，都融入到那一个个跳动的音符之中。有时候，灵感如泉涌，旋律在脑海中自然流淌，我迫不及待地将它们记录下来；而有时候，创作也会遇到瓶颈，我会反复琢磨每一个和弦、每一句歌词，直到找到最完美的表达方式。</p>
-                    <p>在音乐的道路上，我也有过许多难忘的演出经历。站在舞台上，面对台下热情的观众，我能感受到音乐的力量在空气中弥漫。当我弹奏出熟悉的旋律，看到观众们沉浸其中，与我一同感受音乐带来的情感共鸣时，那种成就感和满足感是无法用言语来形容的。</p>
-                    <p>音乐不仅仅是一种艺术形式，更是我与世界沟通的桥梁。它让我结识了许多志同道合的朋友，我们一起探讨音乐、分享创作心得，互相鼓励、共同进步。通过音乐，我也有机会了解不同的文化和风格，不断丰富自己的音乐视野。</p>
-                    <p>未来，我希望能够继续在音乐的海洋中遨游，不断探索和创新，创作出更多优秀的音乐作品，将这份对音乐的热爱传递给更多的人。</p>
-                </div>
-            </div>
-
-            <!-- 个人目标 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('goals')">个人目标 <i>| Personal Goals</i></h2>
-                <div id="goals" class="section-content">
-                    <p>在未来，我希望能够创作出更多优秀的音乐作品，举办个人演唱会，让更多人听到我的音乐。 <i>| In the future, I hope to create more excellent music works, hold personal concerts, and let more people hear my music.</i></p>
-                </div>
-            </div>
-
-            <!-- 联系方式 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('contact')">联系方式 <i>| Contact Information</i></h2>
-                <div id="contact" class="section-content">
-                    <p>如果你想和我交流，可以通过以下方式联系我： <i>| If you want to communicate with me, you can contact me in the following ways:</i></p>
-                    <p>邮箱：<a href="mailto:1669513935@qq.com">1669513935@qq.com</a>，欢迎随时给我发送邮件，我们可以一起探讨音乐创作。 <i>| Email: <a href="mailto:1669513935@qq.com">1669513935@qq.com</a>. You are welcome to send me an email at any time, and we can discuss music creation together.</i></p>
-                    <p>电话：13667207947 | Phone: 13667207947</p>
-                </div>
-            </div>
-
-            <!-- 专辑部分 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('albums')">专辑 <i>| Albums</i></h2>
-                <div id="albums" class="section-content">
-                    <div class="album">
-                        <h3>专辑名称 1 | Album Name 1</h3>
-                        <ol>
-                            <li>单曲 1 | Song 1 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 2 | Song 2 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 3 | Song 3 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 4 | Song 4 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 5 | Song 5 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 6 | Song 6 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 7 | Song 7 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 8 | Song 8 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 9 | Song 9 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 10 | Song 10 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 11 | Song 11 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                        </ol>
-                    </div>
-                    <div class="album">
-                        <h3>专辑名称 2 | Album Name 2</h3>
-                        <ol>
-                            <li>单曲 1 | Song 1 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 2 | Song 2 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 3 | Song 3 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 4 | Song 4 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 5 | Song 5 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 6 | Song 6 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 7 | Song 7 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 8 | Song 8 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 9 | Song 9 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 10 | Song 10 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                            <li>单曲 11 | Song 11 - 作词: 石逸飞 | Lyrics by: Shi Yifei</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- 留言区域 -->
-        <div class="message-section" id="message-section">
-            <h2>留言给我</h2>
-            <form action="" method="POST">
-                <label for="name">姓名：</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">邮箱：</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">留言内容：</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">发送留言</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2025 石逸飞 | 版权所有</p>
-    </footer>
-
-    <script>
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
-        }
-    </script>
-</body>
-
-</html>
-```
-
-### CSS 代码（styles.css）
-```css
+/* 全局样式 */
 * {
     box-sizing: border-box;
 }
@@ -161,16 +8,14 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    background: linear-gradient(to bottom, #FFB6C1, #6A5ACD);
-    color: #333;
+    background: linear-gradient(to bottom, #000033, #00001a);
+    color: #e0e0e0;
     animation: fadeIn 1s ease-in-out;
     overflow-x: hidden;
-    /* 添加文学音乐相关意象背景 */
-    background-image: url('music_notes.png'), url('books.png');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
     background-repeat: repeat;
     background-size: 100px 100px;
     background-blend-mode: overlay;
-    opacity: 0.9;
 }
 
 @keyframes fadeIn {
@@ -182,9 +27,10 @@ body {
     }
 }
 
+/* 头部样式 */
 header {
-    background: linear-gradient(135deg, rgba(209, 216, 224, 0.8) 0%, rgba(224, 231, 255, 0.8) 100%);
-    color: #333;
+    background: linear-gradient(135deg, rgba(0, 0, 51, 0.8) 0%, rgba(0, 0, 34, 0.8) 100%);
+    color: #e0e0e0;
     text-align: center;
     padding: 2em 0;
     transform: translateY(-100%);
@@ -202,6 +48,7 @@ header {
     }
 }
 
+/* 主要容器样式 */
 .main-container {
     max-width: 1200px;
     margin: 2em auto;
@@ -210,19 +57,24 @@ header {
     align-items: flex-start;
 }
 
+/* 主要内容样式 */
 main {
     flex: 2;
     min-width: 300px;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 34, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     opacity: 0;
     animation: fadeInUp 1s ease-in-out 0.5s forwards;
     position: relative;
     z-index: 1;
     backdrop-filter: blur(5px);
-    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 10%, transparent 10.1%), radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 10%, transparent 10.1%), radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 10%, transparent 10.1%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 10%, transparent 10.1%), rgba(255, 255, 255, 0.8);
+    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+                radial-gradient(circle at 90% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+                radial-gradient(circle at 10% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+                radial-gradient(circle at 90% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+                rgba(0, 0, 34, 0.8);
 }
 
 @keyframes fadeInUp {
@@ -236,11 +88,144 @@ main {
     }
 }
 
+/* 章节容器样式 */
 .section-container {
+    margin-bottom: 1.5em;
+}
+
+.section-container h2 {
+    cursor: pointer;
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5em;
+    transition: color 0.3s ease;
+}
+
+.section-container h2:hover {
+    color: #87CEEB;
+}
+
+.section-content {
+    display: none;
+    padding: 1em;
+}
+
+/* 专辑样式 */
+.album {
     margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-    position: relative;
-    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 10%, transparent 10.1%), radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 10%, transparent 10.1%), radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 10%, transparent 10.1%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 10%, transparent 10.1%), rgba(255, 255, 2
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.album h3 {
+    margin-top: 0;
+    color: #87CEEB;
+}
+
+.album ol {
+    list-style-type: decimal;
+    padding-left: 1.5em;
+}
+
+.album ol li {
+    margin-bottom: 0.5em;
+}
+
+.album ol li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.album ol li a:hover {
+    color: #87CEEB;
+}
+
+.lyrics-details {
+    display: none;
+    margin-top: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1em;
+}
+
+/* 留言区域样式（假设后续有留言区域可添加相关内容） */
+.message-section {
+    flex: 1;
+    background-color: rgba(0, 0, 34, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1em;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+    backdrop-filter: blur(5px);
+}
+
+.message-section h2 {
+    color: #e0e0e0;
+    margin-top: 0;
+}
+
+.message-section form label {
+    display: block;
+    margin-bottom: 0.3em;
+    color: #e0e0e0;
+}
+
+.message-section form input,
+.message-section form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 34, 0.5);
+    color: #e0e0e0;
+}
+
+.message-section form button {
+    background-color: #87CEEB;
+    color: #000033;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-section form button:hover {
+    background-color: #6495ED;
+}
+
+/* 页脚样式 */
+footer {
+    background: linear-gradient(135deg, rgba(0, 0, 51, 0.8) 0%, rgba(0, 0, 34, 0.8) 100%);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(5px);
+}
+
+/* 烟花效果样式（可根据实际情况调整） */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: firework 1s ease-out infinite;
+    opacity: 0;
+}
+
+@keyframes firework {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
