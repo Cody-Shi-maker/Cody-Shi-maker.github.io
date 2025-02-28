@@ -1,7 +1,3 @@
-为了在网站背景上增加一些与文学音乐有关的意象，我们可以利用 CSS 的 `background-image` 属性添加相关的图案，同时结合 `opacity` 属性调整透明度，让这些意象作为背景的一部分，营造出更具艺术感和氛围感的页面。以下是更新后的 HTML 和 CSS 代码：
-
-### HTML 代码
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
