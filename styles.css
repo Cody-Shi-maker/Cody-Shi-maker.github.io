@@ -1,231 +1,76 @@
 /* 全局样式 */
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     margin: 0;
     padding: 0;
-    position: relative;
-    background: linear-gradient(to bottom, #000033, #00001a);
-    color: #e0e0e0;
-    animation: fadeIn 1s ease-in-out;
-    overflow-x: hidden;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
-    background-repeat: repeat;
-    background-size: 100px 100px;
-    background-blend-mode: overlay;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* 头部样式 */
-header {
-    background: linear-gradient(135deg, rgba(0, 0, 51, 0.8) 0%, rgba(0, 0, 34, 0.8) 100%);
-    color: #e0e0e0;
-    text-align: center;
-    padding: 2em 0;
-    transform: translateY(-100%);
-    animation: slideDown 1s ease-in-out forwards;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 0 0 20px 20px;
-}
-
-@keyframes slideDown {
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* 主要容器样式 */
-.main-container {
-    max-width: 1200px;
-    margin: 2em auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
     display: flex;
-    gap: 2em;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 主要内容样式 */
-main {
-    flex: 2;
-    min-width: 300px;
-    padding: 1em;
-    background-color: rgba(0, 0, 34, 0.8);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    opacity: 0;
-    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+/* 主容器样式 */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
     position: relative;
     z-index: 1;
-    backdrop-filter: blur(5px);
-    background: radial-gradient(circle at 10% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 90% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 10% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 90% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                rgba(0, 0, 34, 0.8);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 章节容器样式 */
-.section-container {
-    margin-bottom: 1.5em;
-}
-
-.section-container h2 {
-    cursor: pointer;
-    color: #e0e0e0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 0.5em;
-    transition: color 0.3s ease;
-}
-
-.section-container h2:hover {
-    color: #87CEEB;
-}
-
-.section-content {
-    display: none;
-    padding: 1em;
-}
-
-/* 专辑样式 */
-.album {
-    margin-bottom: 2em;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 1em;
-}
-
-.album h3 {
-    margin-top: 0;
-    color: #87CEEB;
-}
-
-.album ol {
-    list-style-type: decimal;
-    padding-left: 1.5em;
-}
-
-.album ol li {
-    margin-bottom: 0.5em;
-}
-
-.album ol li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.album ol li a:hover {
-    color: #87CEEB;
-}
-
-.lyrics-details {
-    display: none;
-    margin-top: 1em;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: 1em;
-}
-
-/* 留言区域样式（假设后续有留言区域可添加相关内容） */
-.message-section {
-    flex: 1;
-    background-color: rgba(0, 0, 34, 0.8);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 1em;
-    opacity: 0;
-    animation: fadeInUp 1s ease-in-out 0.5s forwards;
-    backdrop-filter: blur(5px);
-}
-
-.message-section h2 {
-    color: #e0e0e0;
-    margin-top: 0;
-}
-
-.message-section form label {
-    display: block;
-    margin-bottom: 0.3em;
-    color: #e0e0e0;
-}
-
-.message-section form input,
-.message-section form textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    background-color: rgba(0, 0, 34, 0.5);
-    color: #e0e0e0;
-}
-
-.message-section form button {
-    background-color: #87CEEB;
-    color: #000033;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.message-section form button:hover {
-    background-color: #6495ED;
-}
-
-/* 页脚样式 */
-footer {
-    background: linear-gradient(135deg, rgba(0, 0, 51, 0.8) 0%, rgba(0, 0, 34, 0.8) 100%);
-    color: #e0e0e0;
-    text-align: center;
-    padding: 1em 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px 20px 0 0;
-    backdrop-filter: blur(5px);
-}
-
-/* 烟花效果样式（可根据实际情况调整） */
-.firework {
+/* 背景层样式 */
+.background-layer {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    animation: firework 1s ease-out infinite;
-    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #000);
+    z-index: 0;
+    overflow: hidden;
 }
 
-@keyframes firework {
+/* 背景文字样式 */
+.background-layer::before {
+    content: "欢愉 街市 梦境 光影 相思 幻觉 灵魂 迷惘 献祭 温热 爱恋 泪流 风月 年华 记忆 月光 诗篇 生命";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    animation: moveText 30s linear infinite;
+    z-index: -1;
+}
+
+/* 文字移动动画 */
+@keyframes moveText {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translateY(-100px);
-        opacity: 0;
+        transform: translate(-50%, -50%) rotate(360deg);
     }
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 段落样式 */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
 }
