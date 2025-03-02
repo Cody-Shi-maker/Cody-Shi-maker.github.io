@@ -79,13 +79,10 @@
                 </div>
             </div>
             
-            <!-- 专辑部分 -->            
-            <div class="section-container">
-                <h2 onclick="toggleContent('albums')">专辑 <i>| Albums</i></h2>
-                <div id="albums" class="section-content">
-                            <li><a href="#" onclick="showLyrics('prologue')">序：关于爱与被爱的|About Loving and Being Loved</a></li>                  
-                            <h3序：关于爱与被爱的|About Loving and Being Loved </h3>
-                            <pre>
+           <!-- 序部分 -->
+            <div class="item">
+                <h3><a href="#" onclick="showLyrics('prologue')">序：关于爱与被爱的 | About Loving and Being Loved</a></h3>
+                <pre style="white-space: pre-wrap; color: #666;">。
 01
 写下这些文字于我而言其实是一件有点荒谬的事情。
 
@@ -123,7 +120,11 @@
 但我仍然认为有些因素可能关乎这些想法的起源，
 </pre>
         </div>
-          <div class="album">                     
+      <!-- 专辑部分 -->
+            <div class="item">
+                <h2 onclick="toggleContent('albums')">专辑 <i>| Albums</i></h2>
+                <div id="albums" class="section-content">
+                    <div class="album">                  
                         <h3>《失落着的，爱着的》|Losing Loves</h3>
                         <ol>
                             <li><a href="#" onclick="showLyrics('album1-song1')">终章| The Last Chapter</a></li>
