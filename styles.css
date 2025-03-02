@@ -4,7 +4,9 @@
     max-width: 100%;
 }
 
-body {
+html, body {
+    /* 保证 html 和 body 元素至少占据整个视口高度 */
+    min-height: 100vh; 
     margin: 0;
     padding: 0;
     position: relative;
