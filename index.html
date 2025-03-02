@@ -852,6 +852,20 @@ Part II
                 content.style.display = 'block';
             }
         }
+
+        function showLyrics(lyricsId, albumClass) {
+            // 先隐藏当前专辑下所有歌词详情区域
+            const allLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
+            allLyrics.forEach(lyrics => {
+                lyrics.style.display = 'none';
+            });
+
+            // 显示点击歌曲对应的歌词详情区域
+            const lyrics = document.getElementById(lyricsId);
+            if (lyrics) {
+                lyrics.style.display = 'block';
+            }
+        }
     </script>
 </body>
 
