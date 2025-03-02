@@ -1,3 +1,6 @@
+以下是完整的 HTML 代码，包含了之前提及的所有内容，并且为了提升可访问性和交互性，添加了 ARIA 属性，优化了 JavaScript 逻辑，同时表单部分仅做了基本的前端结构，若要实现真正的提交功能，还需要结合后端技术处理。
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -20,7 +23,7 @@
         <main id="main-content">
             <!-- 个人基本信息 -->
             <div class="section-container">
-                <h2 onclick="toggleContent('basic-info')">基本信息 <i>| Basic Information</i></h2>
+                <h2 onclick="toggleContent('basic-info')" aria-expanded="false" aria-controls="basic-info">基本信息 <i>| Basic Information</i></h2>
                 <div id="basic-info" class="section-content">
                     <p><strong>姓名</strong>：石逸飞 <i>| <strong>Name</strong>: CodyShi</i></p>
                     <p><strong>笔名</strong>：梓欣 <i>| <strong>Name</strong>: Zi Xin</i></p>
@@ -32,7 +35,7 @@
 
             <!-- 个人兴趣爱好 -->
             <div class="section-container">
-                <h2 onclick="toggleContent('hobbies')">兴趣爱好 <i>| Hobbies</i></h2>
+                <h2 onclick="toggleContent('hobbies')" aria-expanded="false" aria-controls="hobbies">兴趣爱好 <i>| Hobbies</i></h2>
                 <div id="hobbies" class="section-content">
                     <h3>|音乐Music </h3>
                     <h3> |数学Mathematics </h3>
@@ -42,38 +45,37 @@
                 </div>
             </div>
 
-             <!-- 音乐创作经历 -->
+            <!-- 音乐创作经历 -->
             <div class="section-container">
-                <h2 onclick="toggleContent('experience')">音乐创作经历 <i>| Musical Creation Experiences</i></h2>
+                <h2 onclick="toggleContent('experience')" aria-expanded="false" aria-controls="experience">音乐创作经历 <i>| Musical Creation Experiences</i></h2>
                 <div id="experience" class="section-content">
                     <p>2023 失落着的，爱着的 Losing Loves</p>
                     <p>2024 无声的温柔 Unimagined Beauty</p>
-
                 </div>
             </div>
 
             <!-- 寄语 -->
             <div class="section-container">
-                <h2 onclick="toggleContent('note')">寄语 <i>| Note</i></h2>
+                <h2 onclick="toggleContent('note')" aria-expanded="false" aria-controls="note">寄语 <i>| Note</i></h2>
                 <div id="note" class="section-content">
                     <p>献给所有在爱中 </p>
-                    <p>受苦受难的人们          </p>
+                    <p>受苦受难的人们 </p>
                     <p>Dedicated to those who are suffering in love.</p>
                 </div>
             </div>
 
             <!-- 联系方式 -->
             <div class="section-container">
-                <h2 onclick="toggleContent('contact')">联系方式 <i>| Contact Information</i></h2>
+                <h2 onclick="toggleContent('contact')" aria-expanded="false" aria-controls="contact">联系方式 <i>| Contact Information</i></h2>
                 <div id="contact" class="section-content">
                     <p>如果你想和我交流，可以通过以下方式联系我： </p> <i>If you want to communicate with me, you can contact me in the following ways</i>
                     <p>邮箱：<a href="mailto:1669513935@qq.com">1669513935@qq.com</a>，欢迎随时给我发送邮件，我们可以一起探讨歌词创作。 <i>| Email: <a href="mailto:1669513935@qq.com">1669513935@qq.com</a>. You are welcome to send me an email at any time, and we can discuss lyric creation together.</i></p>
                     <p>电话：13667207947 | Phone: 13667207947</p>
                 </div>
             </div>
-            
+
             <div class="section-container">
-                <h2 onclick="toggleContent('prologue')">序：关于爱与被爱的 | About Loving and Being Loved</h2>
+                <h2 onclick="toggleContent('prologue')" aria-expanded="false" aria-controls="prologue">序：关于爱与被爱的 | About Loving and Being Loved</h2>
                 <div id="prologue" class="section-content">
                     <pre>
 01
@@ -117,25 +119,27 @@
 
             <!-- 专辑部分 -->
             <div class="section-container">
-                <div class="album">
-                    <h3>《失落着的，爱着的》|Losing Loves</h3>
-                    <ol>
-                        <li><a href="#" onclick="showLyrics('album1-song1')">终章| The Last Chapter</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song2')">无题| Untitled</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song3')">后世诗 | To Future</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song4')">车站| Farewell at the Station</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song5')">又见炊烟 | My Hometown</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song6')">浮梦 | Dreams</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song7')">失语者的叹息| The Sigh of the Voiceless</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song8')">重逢| A Second Chance at Love</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song9')">假面舞会|A Masquerade Ball</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song10')">流年依旧 | Eternal Youth Flow</a></li>
-                        <li><a href="#" onclick="showLyrics('album1-song11')">爱之歌| Love Song</a></li>
-                    </ol>
-                    <!-- 歌词详情 -->
-                    <div id="album1-song1" class="lyrics-details">
-                        <h4>终章 歌词 | Lyrics of The Last Chapter</h4>
-                        <pre>
+                <h2 onclick="toggleContent('albums')" aria-expanded="false" aria-controls="albums">专辑 <i>| Albums</i></h2>
+                <div id="albums" class="section-content">
+                    <div class="album">
+                        <h3>《失落着的，爱着的》|Losing Loves</h3>
+                        <ol>
+                            <li><a href="#" onclick="showLyrics('album1-song1', 'album1')">终章| The Last Chapter</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song2', 'album1')">无题| Untitled</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song3', 'album1')">后世诗 | To Future</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song4', 'album1')">车站| Farewell at the Station</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song5', 'album1')">又见炊烟 | My Hometown</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song6', 'album1')">浮梦 | Dreams</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song7', 'album1')">失语者的叹息| The Sigh of the Voiceless</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song8', 'album1')">重逢| A Second Chance at Love</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song9', 'album1')">假面舞会|A Masquerade Ball</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song10', 'album1')">流年依旧 | Eternal Youth Flow</a></li>
+                            <li><a href="#" onclick="showLyrics('album1-song11', 'album1')">爱之歌| Love Song</a></li>
+                        </ol>
+                        <!-- 歌词详情 -->
+                        <div id="album1-song1" class="lyrics-details album1">
+                            <h4>终章 歌词 | Lyrics of The Last Chapter</h4>
+                            <pre>
 夜微凉 月色映小窗
 心底难止伤痛作响
 谁体味 一段绵长幽香
@@ -175,11 +179,11 @@
 一切动人美丽
 葬送进扬起的风沙
 不曾想 终将泪干风化
-                        </pre>
-                    </div>
-                    <div id="album1-song2" class="lyrics-details">
-                        <h4>无题 歌词 | Lyrics of Untitled</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song2" class="lyrics-details album1">
+                            <h4>无题 歌词 | Lyrics of Untitled</h4>
+                            <pre>
 你行于路边
 无人向你行注目礼
 而你亦早把他们当作玩戏
@@ -197,12 +201,11 @@
 偷走主人家里稀世珍礼
 被到处通缉
 却暗自感到惊喜
-                        </pre>
-                    </div>
-                    <!-- 依次补充其他歌曲歌词 -->
-                    <div id="album1-song3" class="lyrics-details">
-                        <h4>后世诗 歌词 | Lyrics of To Future</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song3" class="lyrics-details album1">
+                            <h4>后世诗 歌词 | Lyrics of To Future</h4>
+                            <pre>
 收敛的眉目 字句写满了孤独
 危险的道路 故事开始又结束
 冷漠眉目 显露宽恕 
@@ -221,7 +224,7 @@
 想 若干场以后 终释怀的锁
 被挂上岸头
 雪飘荡长空 填满那空虚檐头
-    
+
 不用掩埋 无论是对与错
 年少的感动 都汇成一场梦
 也曾经 老街尽头
@@ -237,23 +240,23 @@
 叹 谁点燃蜡烛 残光就足够
 够对影自酌
 总能皱眉头 终能化天长地久
-                        </pre>
-                    </div>
-                    <div id="album1-song4" class="lyrics-details">
-                        <h4>车站 歌词 | Lyrics of Farewell at the Station</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song4" class="lyrics-details album1">
+                            <h4>车站 歌词 | Lyrics of Farewell at the Station</h4>
+                            <pre>
 一个破旧车站
 谁默默逗留
 虽要走 脚步仍停驻
 写下陌生信笺
 内遗留寄托
 夜中 谁暗自泪流
-                                
+
 总是未有预料 就下决心
 不再回头
 总是狠下心来 残忍离走
 不管谁难受
-                                
+
 这梦中未醒人 我愿你好过
 有幸福结果
 一切苦与痛 请让我承受
@@ -261,14 +264,14 @@
 也许某夜中 你会想起我
 足以我好受
 但求此后的路 走向通途
-                                
+
 两个人的承诺
 一个人背过
 风雨后 谁能坚定如初
 你假装无辜
 可罪恶难渡
 我想 向前伸出手
-                                
+
 在孤光残影中 伫立在路口
 等待雨后虹
 不信所谓缘故 流言满路
@@ -276,11 +279,11 @@
 忘却先前错 踏上去时路
 终将再相逢
 此后如何孤独 都为你欢呼
-                        </pre>
-                    </div>
-                    <div id="album1-song5" class="lyrics-details">
-                        <h4>又见炊烟 歌词 | Lyrics of My Hometown</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song5" class="lyrics-details album1">
+                            <h4>又见炊烟 歌词 | Lyrics of My Hometown</h4>
+                            <pre>
 又见夕阳炊烟
 袅袅地从天边升起
 像是往日哀愁
@@ -315,11 +318,11 @@
 听见窗外雨点轻敲
 一切都似未变
 唯有我已不如往昔
-                        </pre>
-                    </div>
-                    <div id="album1-song6" class="lyrics-details">
-                        <h4>浮梦 歌词 | Lyrics of Dreams</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song6" class="lyrics-details album1">
+                            <h4>浮梦 歌词 | Lyrics of Dreams</h4>
+                            <pre>
 很久 已记不清花何时跌下
 尘封的记忆里 只剩你头带襟花
 只一瞬一瞥 温柔可会延续吗
@@ -348,11 +351,11 @@
 即使自缚作茧 即使心碎某天
 挽留残忍笑脸
 不知何年月 醒来无念
-                        </pre>
-                    </div>
-                    <div id="album1-song7" class="lyrics-details">
-                        <h4>失语者的叹息 歌词 | Lyrics of The Sigh of the Voiceless</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song7" class="lyrics-details album1">
+                            <h4>失语者的叹息 歌词 | Lyrics of The Sigh of the Voiceless</h4>
+                            <pre>
 Part I
 窗前一声轻柔叹息
 谁在悼念亡去心事
@@ -376,7 +379,6 @@ Part I
 从今以后不再固执
 对抗于 无法逃离的回忆
 或许释怀放低 才是最好方式
-  
 
 Part II
 有些日子 痛苦涌入我心口
@@ -392,11 +394,11 @@ Part II
 执着所念瓦解伤心
 希望倾诉给 某个听懂的你
 最终是否 能留下意义
-                        </pre>
-                    </div>
-                    <div id="album1-song8" class="lyrics-details">
-                        <h4>重逢 歌词 | Lyrics of A Second Chance at Love</h4>
-                        <pre>
+                            </pre>
+                        </div>
+                        <div id="album1-song8" class="lyrics-details album1">
+                            <h4>重逢 歌词 | Lyrics of A Second Chance at Love</h4>
+                            <pre>
 我们曾是那样
 像是旧相识 又不甚熟悉
 不知是否曾经迷惘
@@ -430,12 +432,12 @@ Part II
 但从无数场梦境中醒来
 我才终于明白
 你拥有过 我的每份呼吸
-我拥有过 你盛开的黎明                               
-                        </pre>
-                    </div>
-                    <div id="album1-song9" class="lyrics-details">
-                        <h4>假面舞会 歌词 | Lyrics of A Masquerade Ball</h4>
-                        <pre>
+我拥有过 你盛开的黎明
+                            </pre>
+                        </div>
+                        <div id="album1-song9" class="lyrics-details album1">
+                            <h4>假面舞会 歌词 | Lyrics of A Masquerade Ball</h4>
+                            <pre>
 磨得光鲜的镜子
 肃立端庄的影子
 轻笑着 伪装精巧的样子
