@@ -1,8 +1,9 @@
-/* 全局样式 */
-* {
-    box-sizing: border-box;
-}
+从你给出的代码来看，背景是通过 `body` 元素设置的线性渐变和 SVG 图案组合而成。在手机上网页左右滑动后背景消失，可能是因为背景的设置在页面滚动时未能正确延展，下面为你提供几种可能的解决办法：
 
+### 1. 设置背景固定
+借助 `background-attachment: fixed` 让背景固定在浏览器窗口，不会随页面滚动而移动。
+
+```css
 body {
     margin: 0;
     padding: 0;
@@ -16,6 +17,65 @@ body {
     opacity: 0.9;
     animation: fadeIn 1s ease-in-out;
     overflow-x: hidden;
+    /* 添加这一行 */
+    background-attachment: fixed; 
+}
+```
+
+### 2. 确保背景覆盖整个视口
+利用 `background-size: cover` 让背景图像覆盖整个视口，不过由于你使用的是重复的 SVG 图案，所以可能需要结合 `background-repeat` 来保证图案正常显示。
+
+```css
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: linear-gradient(to bottom, #000033, #00001a);
+    color: #e0e0e0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
+    background-repeat: repeat;
+    /* 修改这一行 */
+    background-size: cover; 
+    background-blend-mode: overlay;
+    opacity: 0.9;
+    animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden;
+}
+```
+
+### 3. 检查是否有元素遮挡背景
+确保页面上没有元素的宽度超出了视口，从而遮盖了背景。可以添加如下代码确保所有元素的最大宽度不超过视口宽度。
+
+```css
+* {
+    box-sizing: border-box;
+    /* 添加这一行 */
+    max-width: 100%; 
+}
+```
+
+### 完整修改后的代码示例
+```css
+/* 全局样式 */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: linear-gradient(to bottom, #000033, #00001a);
+    color: #e0e0e0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
+    background-repeat: repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    opacity: 0.9;
+    animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden;
+    background-attachment: fixed;
 }
 
 @keyframes fadeIn {
@@ -233,3 +293,6 @@ footer {
         opacity: 0;
     }
 }
+```
+
+经过上述修改，背景应该能够在页面滚动时保持正常显示。你可以把修改后的代码应用到项目中进行测试。 
