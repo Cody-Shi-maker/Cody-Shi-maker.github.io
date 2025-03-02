@@ -1,94 +1,3 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodyShi的个人网站 | Personal Website of CodyShi</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .section-content {
-            display: none;
-        }
-
-        .lyrics-details {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- 网页头部 -->
-    <header>
-        <h1>Welcome to Cody Shi's Room</h1>
-    </header>
-
-    <!-- 主要内容和留言区域的外层容器 -->
-    <div class="main-container">
-        <!-- 网页主要内容 -->
-        <main id="main-content">
-            <!-- 个人基本信息 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('basic-info')">基本信息 <i>| Basic Information</i></h2>
-                <div id="basic-info" class="section-content">
-                    <p><strong>姓名</strong>：石逸飞 <i>| <strong>Name</strong>: CodyShi</i></p>
-                    <p><strong>笔名</strong>：梓欣 <i>| <strong>Name</strong>: Zi Xin</i></p>
-                    <p><strong>星座</strong>：处女座 <i>| <strong>Constellation</strong>: Virgo</i></p>
-                    <p><strong>职业</strong>：作词人 <i>| <strong>Occupation</strong>: Lyricist</i></p>
-                    <p><strong>所在地</strong>：湖北武汉 <i>| <strong>Location</strong>: Wuhan, Hubei</i></p>
-                </div>
-            </div>
-
-            <!-- 个人兴趣爱好 -->
-            <div class="section-container">
-                <h2 onclick="toggleContent('hobbies')">兴趣爱好 <i>| Hobbies</i></h2>
-                <div id="hobbies" class="section-content">
-                    <h3>|音乐Music </h3>
-                    <h3> |数学Mathematics </h3>
-                    <h3> |哲学Philosophy </h3>
-                    <h3> |心理学Psychology </h3>
-                    <h3> |文学Literature </h3>
-                </div>
-            </div>
-
-            <!-- 其他部分保持不变 -->
-            <!-- ... -->
-
-            <!-- 专辑部分 -->
-            <!-- ... -->
-
-        </main>
-    </div>
-
-    <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-
-        function showLyrics(id) {
-            var allLyrics = document.querySelectorAll('.lyrics-details');
-            allLyrics.forEach(function (lyric) {
-                lyric.style.display = 'none';
-            });
-            var targetLyrics = document.getElementById(id);
-            if (targetLyrics) {
-                targetLyrics.style.display = 'block';
-            }
-        }
-    </script>
-</body>
-
-</html>
-```
-
-### CSS 代码修改部分
-去掉加号设计，即移除 `.section-container h2::after` 和 `.section-container h2.active::after` 相关的样式。同时，为了保证展开和折叠效果，保留 `.section-content` 的 `max-height` 过渡效果。
-```css
 /* 全局样式 */
 * {
     box-sizing: border-box;
@@ -150,7 +59,7 @@ header {
     display: flex;
     gap: 2em;
     align-items: flex-start;
-    flex-direction: column; /* 手机端垂直排列 */
+    flex-direction: column;
 }
 
 /* 主要内容样式 */
@@ -168,10 +77,10 @@ main {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     background: radial-gradient(circle at 10% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 90% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 10% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                radial-gradient(circle at 90% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
-                rgba(0, 0, 34, 0.8);
+        radial-gradient(circle at 90% 10%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+        radial-gradient(circle at 10% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+        radial-gradient(circle at 90% 90%, rgba(0, 0, 34, 0.8) 0%, rgba(0, 0, 34, 0.8) 10%, transparent 10.1%),
+        rgba(0, 0, 34, 0.8);
 }
 
 @keyframes fadeInUp {
@@ -188,7 +97,6 @@ main {
 /* 章节容器样式 */
 .section-container {
     margin-bottom: 1.5em;
-    transition: all 0.3s ease;
 }
 
 .section-container h2 {
@@ -205,15 +113,6 @@ main {
 
 .section-content {
     display: none;
-    padding: 1em;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.section-content.show {
-    display: block;
-    max-height: 1000px; /* 一个足够大的值 */
     padding: 1em;
 }
 
@@ -258,7 +157,7 @@ main {
     animation: fadeIn 0.5s ease;
 }
 
-/* 留言区域样式（假设后续有留言区域可添加相关内容） */
+/* 留言区域样式 */
 .message-section {
     flex: 1;
     background-color: rgba(0, 0, 34, 0.8);
@@ -344,6 +243,6 @@ footer {
 /* 响应式设计 */
 @media (min-width: 768px) {
     .main-container {
-        flex-direction: row; /* 桌面端水平排列 */
+        flex-direction: row;
     }
 }
