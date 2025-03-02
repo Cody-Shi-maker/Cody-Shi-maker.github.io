@@ -843,29 +843,13 @@ Part II
     <footer>
         <p>&copy; 2025 CodyShi. All rights reserved.</p>
     </footer>
-
-    <script>
+<script>
         function toggleContent(id) {
             const content = document.getElementById(id);
             if (content.style.display === 'block') {
                 content.style.display = 'none';
             } else {
                 content.style.display = 'block';
-                // 滚动到页面底部
-                window.scrollTo(0, document.body.scrollHeight);
-            }
-        }
-
-        function showLyrics(id, albumClass) {
-            const allLyrics = document.querySelectorAll(`.${albumClass}`);
-            allLyrics.forEach(lyric => {
-                lyric.style.display = 'none';
-            });
-            const selectedLyrics = document.getElementById(id);
-            if (selectedLyrics) {
-                selectedLyrics.style.display = 'block';
-                // 滚动到页面底部
-                window.scrollTo(0, document.body.scrollHeight);
             }
         }
     </script>
