@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodyShi的个人网站 | Personal Website of CodyShi</title>
     <link rel="stylesheet" href="styles.css">
-<style>
-      .section-content {
+    <style>
+        .section-content {
             display: none;
         }
-      .lyrics-details {
+
+        .lyrics-details {
             display: none;
         }
     </style>
@@ -32,7 +33,7 @@
                 <div id="basic-info" class="section-content">
                     <p><strong>姓名</strong>：石逸飞 <i>| <strong>Name</strong>: CodyShi</i></p>
                     <p><strong>笔名</strong>：梓欣 <i>| <strong>Name</strong>: Zi Xin</i></p>
-                  <p><strong>星座</strong>：处女座 <i>| <strong>Constellation</strong>: Virgo</i></p>
+                    <p><strong>星座</strong>：处女座 <i>| <strong>Constellation</strong>: Virgo</i></p>
                     <p><strong>职业</strong>：作词人 <i>| <strong>Occupation</strong>: Lyricist</i></p>
                     <p><strong>所在地</strong>：湖北武汉 <i>| <strong>Location</strong>: Wuhan, Hubei</i></p>
                 </div>
@@ -56,7 +57,7 @@
                 <div id="experience" class="section-content">
                     <p>2023 失落着的，爱着的 Losing Loves</p>
                     <p>2024 无声的温柔 Unimagined Beauty</p>
-                    
+
                 </div>
             </div>
 
@@ -64,8 +65,9 @@
             <div class="section-container">
                 <h2 onclick="toggleContent('note')">寄语 <i>| Note</i></h2>
                 <div id="note" class="section-content">
-                    <p>献给所有在爱中 </p>        
-                     <p>受苦受难的人们          </p>         <p>Dedicated to those who are suffering in love.</p> 
+                    <p>献给所有在爱中 </p>
+                    <p>受苦受难的人们          </p>
+                    <p>Dedicated to those who are suffering in love.</p>
                 </div>
             </div>
 
@@ -78,11 +80,13 @@
                     <p>电话：13667207947 | Phone: 13667207947</p>
                 </div>
             </div>
-            
-           <!-- 序部分 -->
-            <div class="item">
-                <h3><a href="#" onclick="showLyrics('prologue')">序：关于爱与被爱的 | About Loving and Being Loved</a></h3>
-                <pre style="white-space: pre-wrap; color: #666;">。
+
+            <!-- 序部分 -->
+            <div class="section-container">
+                <h2 onclick="toggleContent('prologue')">序：关于爱与被爱的 | About Loving and Being Loved</h2>
+                <div id="prologue" class="section-content">
+                    <pre style="white-space: pre-wrap; color: #666;">
+。
 01
 写下这些文字于我而言其实是一件有点荒谬的事情。
 
@@ -120,11 +124,12 @@
 但我仍然认为有些因素可能关乎这些想法的起源，
 </pre>
         </div>
+                 </div>
       <!-- 专辑部分 -->
-            <div class="item">
+            <div class="section-container">
                 <h2 onclick="toggleContent('albums')">专辑 <i>| Albums</i></h2>
                 <div id="albums" class="section-content">
-                    <div class="album">                  
+                    <div class="album">             
                         <h3>《失落着的，爱着的》|Losing Loves</h3>
                         <ol>
                             <li><a href="#" onclick="showLyrics('album1-song1')">终章| The Last Chapter</a></li>
