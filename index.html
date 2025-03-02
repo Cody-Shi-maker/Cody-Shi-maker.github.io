@@ -846,22 +846,26 @@ Part II
 
     <script>
         function toggleContent(id) {
-            var content = document.getElementById(id);
+            const content = document.getElementById(id);
             if (content.style.display === 'block') {
                 content.style.display = 'none';
             } else {
                 content.style.display = 'block';
+                // 滚动到页面底部
+                window.scrollTo(0, document.body.scrollHeight);
             }
         }
 
-        function showLyrics(id) {
-            var allLyrics = document.querySelectorAll('.lyrics-details');
-            allLyrics.forEach(function (lyric) {
+        function showLyrics(id, albumClass) {
+            const allLyrics = document.querySelectorAll(`.${albumClass}`);
+            allLyrics.forEach(lyric => {
                 lyric.style.display = 'none';
             });
-            var targetLyrics = document.getElementById(id);
-            if (targetLyrics) {
-                targetLyrics.style.display = 'block';
+            const selectedLyrics = document.getElementById(id);
+            if (selectedLyrics) {
+                selectedLyrics.style.display = 'block';
+                // 滚动到页面底部
+                window.scrollTo(0, document.body.scrollHeight);
             }
         }
     </script>
