@@ -71,6 +71,8 @@ header {
     align-items: flex-start;
     flex-direction: column;
     position: relative;
+    /* 添加内边距，让内容在小屏幕上有更多空间 */
+    padding: 0 1em;
 }
 
 /* 主要内容样式 */
@@ -111,6 +113,8 @@ main {
 .section-container {
     margin-bottom: 1.5em;
     position: relative;
+    /* 添加过渡效果，让展开和收缩更平滑 */
+    transition: all 0.3s ease;
 }
 
 .section-container h2 {
@@ -123,6 +127,20 @@ main {
     background: linear-gradient(to right, #e0e0e0, #87CEEB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* 添加图标，增强交互提示 */
+    display: flex;
+    align-items: center;
+}
+
+.section-container h2::after {
+    content: '\25BC'; /* 向下箭头 */
+    margin-left: auto;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.section-container h2[aria-expanded="true"]::after {
+    transform: rotate(180deg);
 }
 
 .section-container h2:hover {
@@ -195,6 +213,8 @@ main {
     color: #e0e0e0;
     text-decoration: none;
     transition: color 0.3s ease;
+    /* 添加过渡效果，让悬停时的下划线动画更平滑 */
+    transition: all 0.3s ease;
 }
 
 .album ol li a:hover {
@@ -212,6 +232,10 @@ main {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     padding-top: 1em;
     animation: fadeIn 0.5s ease;
+    /* 添加背景半透明效果，让歌词更突出 */
+    background-color: rgba(0, 0, 34, 0.3);
+    border-radius: 10px;
+    padding: 1em;
 }
 
 /* 留言区域样式 */
