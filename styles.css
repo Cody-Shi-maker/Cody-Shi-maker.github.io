@@ -10,8 +10,8 @@ html, body {
     margin: 0;
     padding: 0;
     position: relative;
-    /* 星空背景渐变 */
-    background: linear-gradient(to bottom, #000033, #00001a);
+    /* 星空背景渐变，增加更多颜色层次 */
+    background: linear-gradient(45deg, #000033 0%, #00001a 30%, #000033 60%, #00001a 100%);
     color: #e0e0e0;
     /* 星空背景图案 */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
@@ -19,7 +19,7 @@ html, body {
     background-size: 100px 100px; 
     background-blend-mode: overlay;
     opacity: 0.9;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out, backgroundAnimation 30s linear infinite; /* 添加背景动画 */
     /* 允许水平滚动 */
     overflow-x: auto; 
     background-attachment: scroll; /* 让背景随内容滚动 */
@@ -35,6 +35,15 @@ html, body {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 1000px;
     }
 }
 
