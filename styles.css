@@ -11,16 +11,9 @@ html, body {
     line-height: 1.8;
     letter-spacing: 0.05em;
     color: #e0e0e0;
-    background: linear-gradient(45deg, #000033 0%, #00001a 100%);
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" /><circle cx="30" cy="20" r="1" fill="white" /><circle cx="70" cy="80" r="1" fill="white" /><circle cx="90" cy="40" r="1" fill="white" /></svg>');
-    background-blend-mode: overlay;
-    animation: backgroundAnimation 60s linear infinite;
+    /* 单一颜色背景 */
+    background-color: #000022;
     overflow-x: hidden;
-}
-
-@keyframes backgroundAnimation {
-    0% { background-position: 0 0; }
-    100% { background-position: 200px 200px; }
 }
 
 /* 简化后的背景粒子效果 */
@@ -40,7 +33,7 @@ html, body {
 
 /* 网页头部样式 */
 header {
-    background: linear-gradient(135deg, rgba(0, 0, 51, 0.8) 0%, rgba(0, 0, 34, 0.8) 100%);
+    background: rgba(0, 0, 34, 0.8);
     color: #e0e0e0;
     text-align: center;
     padding: 2em 0;
@@ -63,7 +56,8 @@ header {
     max-width: 1200px;
     margin: 2em auto;
     padding: 2em;
-    background: rgba(0, 0, 0, 0.3);
+    /* 主要内容框内背景 */
+    background: rgba(0, 0, 40, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -72,7 +66,7 @@ header {
 .section-container h2 {
     cursor: pointer;
     padding: 1em;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 50, 0.8);
     border-radius: 10px;
     transition: background 0.3s ease;
     background: linear-gradient(to right, #e0e0e0, #87CEEB);
@@ -81,14 +75,14 @@ header {
 }
 
 .section-container h2:hover {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 60, 0.8);
 }
 
 /* 章节内容 */
 .section-content {
     display: none;
     padding: 1em;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 30, 0.8);
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
 }
@@ -122,13 +116,22 @@ header {
 .lyrics-details {
     display: none;
     padding: 1em;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 30, 0.8);
     border-radius: 10px;
     margin-top: 1em;
 }
 
 .lyrics-details.show {
     display: block;
+}
+
+/* 留言区域 */
+.message-section {
+    margin-top: 2em;
+    padding: 2em;
+    /* 留言部分框内背景 */
+    background: rgba(0, 0, 45, 0.8);
+    border-radius: 20px;
 }
 
 /* 留言表单样式 */
@@ -139,7 +142,7 @@ header {
     margin-bottom: 1em;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 30, 0.8);
     color: #e0e0e0;
 }
 
