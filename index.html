@@ -815,34 +815,36 @@ Part II
             });
         });
 
-        // 为歌曲标题添加点击事件
-        const songLinks = document.querySelectorAll('.album ol li a');
-        songLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const lyricsId = this.dataset.lyricsId;
-                const albumClass = this.dataset.albumClass;
+document.addEventListener('DOMContentLoaded', function () {
+    // 为歌曲标题添加点击事件
+    const songLinks = document.querySelectorAll('.album ol li a');
+    songLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const lyricsId = this.dataset.lyricsId;
+            const albumClass = this.dataset.albumClass;
 
-                // 隐藏所有歌词详情区域
-                const allLyrics = document.querySelectorAll('.lyrics-details');
-                allLyrics.forEach(lyrics => {
+            // 隐藏所有歌词详情区域
+            const allLyrics = document.querySelectorAll('.lyrics-details');
+            allLyrics.forEach(lyrics => {
+                lyrics.style.display = 'none';
+            });
+
+            // 如果有专辑类名，隐藏该专辑下的歌词详情区域
+            if (albumClass) {
+                const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
+                albumLyrics.forEach(lyrics => {
                     lyrics.style.display = 'none';
                 });
+            }
 
-                // 如果有专辑类名，隐藏该专辑下的歌词详情区域
-                if (albumClass) {
-                    const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
-                    albumLyrics.forEach(lyrics => {
-                        lyrics.style.display = 'none';
-                    });
-                }
-
-                // 显示点击歌曲对应的歌词详情区域
-                const lyrics = document.getElementById(lyricsId);
-                if (lyrics) {
-                    lyrics.style.display = 'block';
-                }
-            });
+            // 显示点击歌曲对应的歌词详情区域
+            const lyrics = document.getElementById(lyricsId);
+            if (lyrics) {
+                lyrics.style.display = 'block';
+            }
         });
     });
+});
+ 
 </script>          
