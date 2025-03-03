@@ -132,17 +132,6 @@ main {
     align-items: center;
 }
 
-.section-container h2::after {
-    content: '\25BC'; /* 向下箭头 */
-    margin-left: auto;
-    font-size: 0.8em;
-    transition: transform 0.3s ease;
-}
-
-.section-container h2[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-}
-
 .section-container h2:hover {
     color: #87CEEB;
     /* 鼠标悬停时的发光效果 */
