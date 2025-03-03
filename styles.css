@@ -20,8 +20,9 @@ html, body {
     background-blend-mode: overlay;
     opacity: 0.9;
     animation: fadeIn 1s ease-in-out;
-    overflow-x: hidden;
-    background-attachment: fixed;
+    /* 允许水平滚动 */
+    overflow-x: auto; 
+    background-attachment: scroll; /* 让背景随内容滚动 */
     /* 更换为更具文艺感的字体 */
     font-family: 'Playfair Display', serif; 
     line-height: 1.6;
