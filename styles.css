@@ -11,7 +11,7 @@ html, body {
     line-height: 1.8;
     letter-spacing: 0.05em;
     color: #e0e0e0;
-    /* 单一颜色背景，调浅背景色 */
+    /* 单一颜色背景 */
     background-color: #000033;
     overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ html, body {
 
 /* 网页头部样式 */
 header {
-    background: rgba(0, 0, 45, 0.8); /* 调浅头部背景色 */
+    background: rgba(0, 0, 45, 0.8);
     color: #e0e0e0;
     text-align: center;
     padding: 2em 0;
@@ -56,7 +56,7 @@ header {
     max-width: 1200px;
     margin: 2em auto;
     padding: 2em;
-    /* 主要内容框内背景，调浅背景色 */
+    /* 主要内容框内背景 */
     background: rgba(0, 0, 50, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -66,7 +66,7 @@ header {
 .section-container h2 {
     cursor: pointer;
     padding: 1em;
-    background: rgba(0, 0, 60, 0.8); /* 调浅章节标题背景色 */
+    background: rgba(0, 0, 60, 0.8);
     border-radius: 10px;
     transition: background 0.3s ease;
     background: linear-gradient(to right, #e0e0e0, #87CEEB);
@@ -75,14 +75,14 @@ header {
 }
 
 .section-container h2:hover {
-    background: rgba(0, 0, 70, 0.8); /* 调浅章节标题悬停背景色 */
+    background: rgba(0, 0, 70, 0.8);
 }
 
 /* 章节内容 */
 .section-content {
     display: none;
     padding: 1em;
-    background: rgba(0, 0, 40, 0.8); /* 调浅章节内容背景色 */
+    background: rgba(0, 0, 40, 0.8);
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
 }
@@ -116,7 +116,7 @@ header {
 .lyrics-details {
     display: none;
     padding: 1em;
-    background: rgba(0, 0, 40, 0.8); /* 调浅歌词详情背景色 */
+    background: rgba(0, 0, 40, 0.8);
     border-radius: 10px;
     margin-top: 1em;
 }
@@ -129,7 +129,7 @@ header {
 .message-section {
     margin-top: 2em;
     padding: 2em;
-    /* 留言部分框内背景，调浅背景色 */
+    /* 留言部分框内背景 */
     background: rgba(0, 0, 55, 0.8);
     border-radius: 20px;
 }
@@ -142,7 +142,7 @@ header {
     margin-bottom: 1em;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    background: rgba(0, 0, 40, 0.8); /* 调浅留言表单背景色 */
+    background: rgba(0, 0, 40, 0.8);
     color: #e0e0e0;
 }
 
@@ -160,9 +160,24 @@ header {
     background: #6495ED;
 }
 
+/* 页脚样式 */
+footer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+    background: rgba(0, 0, 60, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .main-container {
+   .main-container {
+        width: 95%;
+    }
+   .footer {
         width: 95%;
     }
 }
