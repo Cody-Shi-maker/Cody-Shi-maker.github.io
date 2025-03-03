@@ -795,47 +795,53 @@ Part II
     <footer>
         <p>&copy; 2025 CodyShi. All rights reserved.</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // 为章节标题添加点击事件
-            const sectionHeaders = document.querySelectorAll('.section-container h2');
-            sectionHeaders.forEach(header => {
-                header.addEventListener('click', function () {
-                    const targetId = this.dataset.target;
-                    const content = document.getElementById(targetId);
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded',!isExpanded);
-                    if (!isExpanded) {
-                        content.style.display = 'block';
-                    } else {
-                        content.style.display = 'none';
-                    }
-                });
-            });
-
-            // 为歌曲标题添加点击事件
-            const songLinks = document.querySelectorAll('.album ol li a');
-            songLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const lyricsId = this.dataset.lyricsId;
-                    const albumClass = this.dataset.albumClass;
-                    const allLyrics = document.querySelectorAll('.lyrics-details');
-                    allLyrics.forEach(lyrics => {
-                        lyrics.style.display = 'none';
-                    });
-                    if (albumClass) {
-                        const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
-                        albumLyrics.forEach(lyrics => {
-                            lyrics.style.display = 'none';
-                        });
-                    }
-                    const lyrics = document.getElementById(lyricsId);
-                    if (lyrics) {
-                        lyrics.style.display = 'block';
-                    }
-                });
+   
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 为章节标题添加点击事件
+        const sectionHeaders = document.querySelectorAll('.section-container h2');
+        sectionHeaders.forEach(header => {
+            header.addEventListener('click', function () {
+                const targetId = this.getAttribute('aria-controls');
+                const content = document.getElementById(targetId);
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded',!isExpanded);
+                if (!isExpanded) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
             });
         });
-    </script>
-</body>
+
+        // 为歌曲标题添加点击事件
+        const songLinks = document.querySelectorAll('.album ol li a');
+        songLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const lyricsId = this.dataset.lyricsId;
+                const albumClass = this.dataset.albumClass;
+
+                // 隐藏所有歌词详情区域
+                const allLyrics = document.querySelectorAll('.lyrics-details');
+                allLyrics.forEach(lyrics => {
+                    lyrics.style.display = 'none';
+                });
+
+                // 如果有专辑类名，隐藏该专辑下的歌词详情区域
+                if (albumClass) {
+                    const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
+                    albumLyrics.forEach(lyrics => {
+                        lyrics.style.display = 'none';
+                    });
+                }
+
+                // 显示点击歌曲对应的歌词详情区域
+                const lyrics = document.getElementById(lyricsId);
+                if (lyrics) {
+                    lyrics.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>          
