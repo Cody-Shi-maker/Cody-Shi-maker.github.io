@@ -797,29 +797,33 @@ Part II
         <p>&copy; 2025 CodyShi. All rights reserved.</p>
     </footer>
 
-    <script>
-        // 切换章节显示/隐藏
-        function toggleSection(targetId, header) {
-            const content = document.getElementById(targetId);
-            const isExpanded = header.getAttribute('aria-expanded') === 'true';
-            header.setAttribute('aria-expanded', !isExpanded);
-            content.style.display = isExpanded ? 'none' : 'block';
+<script>
+    // 切换章节显示/隐藏
+    function toggleSection(targetId, header) {
+        const content = document.getElementById(targetId);
+        if (!content) {
+            // 如果获取内容元素失败，可在这里添加一些错误处理，比如记录日志
+            return;
         }
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        header.setAttribute('aria-expanded',!isExpanded);
+        content.style.display = isExpanded? 'none' : 'block';
+    }
 
-        // 切换歌词显示/隐藏
-        function toggleLyrics(lyricsId, albumClass) {
-            // 隐藏所有歌词详情
-            const allLyrics = document.querySelectorAll('.lyrics-details');
-            allLyrics.forEach(lyrics => {
-                lyrics.style.display = 'none';
-            });
+    // 切换歌词显示/隐藏
+    function toggleLyrics(lyricsId, albumClass) {
+        // 隐藏当前专辑下的所有歌词详情
+        const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
+        albumLyrics.forEach(lyrics => {
+            lyrics.style.display = 'none';
+        });
 
-            // 显示目标歌词
-            const targetLyrics = document.getElementById(lyricsId);
-            if (targetLyrics) {
-                targetLyrics.style.display = 'block';
-            }
+        // 显示目标歌词
+        const targetLyrics = document.getElementById(lyricsId);
+        if (targetLyrics) {
+            targetLyrics.style.display = 'block';
         }
-    </script>
+    }
+</script>
 </body>
 </html>
