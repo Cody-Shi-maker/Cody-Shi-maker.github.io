@@ -66,16 +66,15 @@ header {
 .section-container h2 {
     cursor: pointer;
     padding: 1em;
-    background: rgba(0, 0, 60, 0.8);
     border-radius: 10px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease; /* 只过渡背景颜色 */
     background: linear-gradient(to right, #e0e0e0, #87CEEB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .section-container h2:hover {
-    background: rgba(0, 0, 70, 0.8);
+    background-color: rgba(0, 0, 70, 0.8); /* 只改变背景颜色 */
 }
 
 /* 章节内容 */
