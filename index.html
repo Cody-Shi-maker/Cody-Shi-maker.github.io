@@ -808,6 +808,17 @@ Part II
         const isExpanded = header.getAttribute('aria-expanded') === 'true';
         header.setAttribute('aria-expanded',!isExpanded);
         content.style.display = isExpanded? 'none' : 'block';
+
+        // 移除所有章节标题的 active 类
+        const allHeaders = document.querySelectorAll('.section-container h2');
+        allHeaders.forEach(h => {
+            if (h!== header) {
+                h.classList.remove('active');
+            }
+        });
+
+        // 切换当前点击标题的 active 类
+        header.classList.toggle('active');
     }
 
     // 切换歌词显示/隐藏
@@ -823,7 +834,19 @@ Part II
         if (targetLyrics) {
             targetLyrics.style.display = 'block';
         }
+
+        // 移除所有歌词标题的 active 类
+        const allLyricsHeaders = document.querySelectorAll('.album ol li a');
+        allLyricsHeaders.forEach(h => {
+            if (h.href.split('#')[1]!== lyricsId) {
+                h.classList.remove('active');
+            }
+        });
+
+        // 找到当前点击的歌词标题并添加 active 类
+        const currentLyricsHeader = document.querySelector(`.album ol li a[href="#${lyricsId}"]`);
+        if (currentLyricsHeader) {
+            currentLyricsHeader.classList.add('active');
+        }
     }
 </script>
-</body>
-</html>
