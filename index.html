@@ -943,10 +943,7 @@ Part II
     }
 
     // 切换歌词显示/隐藏
-    function toggleLyrics(event, lyricsId, albumClass) {
-        // 阻止默认跳转行为
-        event.preventDefault();
-
+    function toggleLyrics(lyricsId, albumClass) {
         // 隐藏当前专辑下的所有歌词详情
         const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
         albumLyrics.forEach(lyrics => {
@@ -957,18 +954,19 @@ Part II
         const targetLyrics = document.getElementById(lyricsId);
         if (targetLyrics) {
             targetLyrics.style.display = 'block';
+            event.preventDefault();
         }
 
         // 移除所有歌词标题的 active 类
         const allLyricsHeaders = document.querySelectorAll('.album ol li a');
         allLyricsHeaders.forEach(h => {
-            if (h.dataset.lyricsId!== lyricsId) {
+            if (h.href.split('#')[1]!== lyricsId) {
                 h.classList.remove('active');
             }
         });
 
         // 找到当前点击的歌词标题并添加 active 类
-        const currentLyricsHeader = document.querySelector(`.album ol li a[data-lyrics-id="${lyricsId}"]`);
+        const currentLyricsHeader = document.querySelector(`.album ol li a[href="#${lyricsId}"]`);
         if (currentLyricsHeader) {
             currentLyricsHeader.classList.add('active');
         }
