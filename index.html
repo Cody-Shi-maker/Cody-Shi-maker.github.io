@@ -1,3 +1,6 @@
+以下是完整修改并补全后的代码，对之前指出的问题都进行了处理，包含 HTML 和 JavaScript 部分：
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -111,17 +114,17 @@
                     <div class="album">
                         <h3>《失落着的，爱着的》|Losing Loves</h3>
                         <ol>
-                            <li><a href="#" data-lyrics-id="album1-song1" data-album-class="album1" onclick="toggleLyrics('album1-song1', 'album1')">终章| The Last Chapter</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song2" data-album-class="album1" onclick="toggleLyrics('album1-song2', 'album1')">无题| Untitled</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song3" data-album-class="album1" onclick="toggleLyrics('album1-song3', 'album1')">后世诗 | To Future</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song4" data-album-class="album1" onclick="toggleLyrics('album1-song4', 'album1')">车站| Farewell at the Station</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song5" data-album-class="album1" onclick="toggleLyrics('album1-song5', 'album1')">又见炊烟 | My Hometown</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song6" data-album-class="album1" onclick="toggleLyrics('album1-song6', 'album1')">浮梦 | Dreams</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song7" data-album-class="album1" onclick="toggleLyrics('album1-song7', 'album1')">失语者的叹息| The Sigh of the Voiceless</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song8" data-album-class="album1" onclick="toggleLyrics('album1-song8', 'album1')">重逢| A Second Chance at Love</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song9" data-album-class="album1" onclick="toggleLyrics('album1-song9', 'album1')">假面舞会|A Masquerade Ball</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song10" data-album-class="album1" onclick="toggleLyrics('album1-song10', 'album1')">流年依旧 | Eternal Youth Flow</a></li>
-                            <li><a href="#" data-lyrics-id="album1-song11" data-album-class="album1" onclick="toggleLyrics('album1-song11', 'album1')">爱之歌| Love Song</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song1" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song1', 'album1')">终章| The Last Chapter</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song2" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song2', 'album1')">无题| Untitled</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song3" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song3', 'album1')">后世诗 | To Future</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song4" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song4', 'album1')">车站| Farewell at the Station</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song5" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song5', 'album1')">又见炊烟 | My Hometown</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song6" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song6', 'album1')">浮梦 | Dreams</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song7" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song7', 'album1')">失语者的叹息| The Sigh of the Voiceless</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song8" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song8', 'album1')">重逢| A Second Chance at Love</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song9" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song9', 'album1')">假面舞会|A Masquerade Ball</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song10" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song10', 'album1')">流年依旧 | Eternal Youth Flow</a></li>
+                            <li><a href="#" data-lyrics-id="album1-song11" data-album-class="album1" onclick="toggleLyrics(event, 'album1-song11', 'album1')">爱之歌| Love Song</a></li>
                         </ol>
                         <!-- 歌词详情 -->
                         <div id="album1-song1" class="lyrics-details album1">
@@ -543,17 +546,17 @@ Part II
                     <div class="album">
                         <h3>《无声的温柔》 | Unimagined Beauty</h3>
                         <ol>
-                            <li><a href="#" data-lyrics-id="album2-song1" data-album-class="album2" onclick="toggleLyrics('album2-song1', 'album2')">Intro | Intro</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song2" data-album-class="album2" onclick="toggleLyrics('album2-song2', 'album2')">等待| Song 2</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song3" data-album-class="album2" onclick="toggleLyrics('album2-song3', 'album2')">黑白幻想 |Imaginer</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song4" data-album-class="album2" onclick="toggleLyrics('album2-song4', 'album2')">归来| Song 4</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song5" data-album-class="album2" onclick="toggleLyrics('album2-song5', 'album2')">十七岁| Seventeen</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song6" data-album-class="album2" onclick="toggleLyrics('album2-song6', 'album2')">无声的温柔 |Unimagined Beauty</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song7" data-album-class="album2" onclick="toggleLyrics('album2-song7', 'album2')">一百天以后|A Hundred days later</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song8" data-album-class="album2" onclick="toggleLyrics('album2-song8', 'album2')">夏夜| Summer Night</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song9" data-album-class="album2" onclick="toggleLyrics('album2-song9', 'album2')">船行水上 | On the River</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song10" data-album-class="album2" onclick="toggleLyrics('album2-song10', 'album2')">在雨季|Faded Memories</a></li>
-                            <li><a href="#" data-lyrics-id="album2-song11" data-album-class="album2" onclick="toggleLyrics('album2-song11', 'album2')">月光.构想.诗篇| Under the Moon</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song1" data-album-class="album2" onclick="toggleLyrics(event,'album2-song1', 'album2')">Intro | Intro</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song2" data-album-class="album2" onclick="toggleLyrics(event,'album2-song2', 'album2')">等待| Song 2</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song3" data-album-class="album2" onclick="toggleLyrics(event,'album2-song3', 'album2')">黑白幻想 |Imaginer</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song4" data-album-class="album2" onclick="toggleLyrics(event,'album2-song4', 'album2')">归来| Song 4</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song5" data-album-class="album2" onclick="toggleLyrics(event,'album2-song5', 'album2')">十七岁| Seventeen</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song6" data-album-class="album2" onclick="toggleLyrics(event,'album2-song6', 'album2')">无声的温柔 |Unimagined Beauty</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song7" data-album-class="album2" onclick="toggleLyrics(event,'album2-song7', 'album2')">一百天以后|A Hundred days later</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song8" data-album-class="album2" onclick="toggleLyrics(event,'album2-song8', 'album2')">夏夜| Summer Night</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song9" data-album-class="album2" onclick="toggleLyrics(event,'album2-song9', 'album2')">船行水上 | On the River</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song10" data-album-class="album2" onclick="toggleLyrics(event,'album2-song10', 'album2')">在雨季|Faded Memories</a></li>
+                            <li><a href="#" data-lyrics-id="album2-song11" data-album-class="album2" onclick="toggleLyrics(event,'album2-song11', 'album2')">月光.构想.诗篇| Under the Moon</a></li>
                         </ol>
                         <!-- 歌词详情 -->
                         <div id="album2-song1" class="lyrics-details album2">
@@ -816,17 +819,17 @@ Part II
                     <div class="album">
                         <h3>《献歌》|Song for You</h3>
                         <ol>
-                            <li><a href="#" data-lyrics-id="album3-song1" data-album-class="album3" onclick="toggleLyrics('album3-song1', 'album3')">歌曲 1 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song2" data-album-class="album3" onclick="toggleLyrics('album3-song2', 'album3')">歌曲 2 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song3" data-album-class="album3" onclick="toggleLyrics('album3-song3', 'album3')">歌曲 3 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song4" data-album-class="album3" onclick="toggleLyrics('album3-song4', 'album3')">歌曲 4 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song5" data-album-class="album3" onclick="toggleLyrics('album3-song5', 'album3')">歌曲 5 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song6" data-album-class="album3" onclick="toggleLyrics('album3-song6', 'album3')">歌曲 6 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song7" data-album-class="album3" onclick="toggleLyrics('album3-song7', 'album3')">歌曲 7 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song8" data-album-class="album3" onclick="toggleLyrics('album3-song8', 'album3')">歌曲 8 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song9" data-album-class="album3" onclick="toggleLyrics('album3-song9', 'album3')">歌曲 9 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song10" data-album-class="album3" onclick="toggleLyrics('album3-song10', 'album3')">歌曲 10 名称</a></li>
-                            <li><a href="#" data-lyrics-id="album3-song11" data-album-class="album3" onclick="toggleLyrics('album3-song11', 'album3')">最后一封情书|The Last Letter</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song1" data-album-class="album3" onclick="toggleLyrics(event,'album3-song1', 'album3')">歌曲 1 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song2" data-album-class="album3" onclick="toggleLyrics(event,'album3-song2', 'album3')">歌曲 2 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song3" data-album-class="album3" onclick="toggleLyrics(event,'album3-song3', 'album3')">歌曲 3 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song4" data-album-class="album3" onclick="toggleLyrics(event,'album3-song4', 'album3')">歌曲 4 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song5" data-album-class="album3" onclick="toggleLyrics(event,'album3-song5', 'album3')">歌曲 5 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song6" data-album-class="album3" onclick="toggleLyrics(event,'album3-song6', 'album3')">歌曲 6 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song7" data-album-class="album3" onclick="toggleLyrics(event,'album3-song7', 'album3')">歌曲 7 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song8" data-album-class="album3" onclick="toggleLyrics(event,'album3-song8', 'album3')">歌曲 8 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song9" data-album-class="album3" onclick="toggleLyrics(event,'album3-song9', 'album3')">歌曲 9 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song10" data-album-class="album3" onclick="toggleLyrics(event,'album3-song10', 'album3')">歌曲 10 名称</a></li>
+                            <li><a href="#" data-lyrics-id="album3-song11" data-album-class="album3" onclick="toggleLyrics(event,'album3-song11', 'album3')">最后一封情书|The Last Letter</a></li>
                         </ol>
                         <div id="album3-song1" class="lyrics-details album3">
                         <h4>歌曲 1 歌词 | Lyrics of Song 1</h4>
@@ -869,7 +872,7 @@ Part II
                         <pre>这里放置歌曲 10 的歌词内容（可替换为实际歌词）</pre>
                     </div>
                     <div id="album3-song11" class="lyrics-details album3">
-                        <h4>歌曲 11 歌词 | Lyrics of Song 11</h4>
+                        <h4>最后一封情书 歌词 | Lyrics of The Last Letter</h4>
                         <pre>
 你知道的
 因为你 当我回想起季节
@@ -917,57 +920,74 @@ Part II
     <footer>
         <p>&copy; 2025 CodyShi. All rights reserved.</p>
     </footer>
-
 <script>
-    // 切换章节显示/隐藏
-    function toggleSection(targetId, header) {
-        const content = document.getElementById(targetId);
-        if (!content) {
-            // 如果获取内容元素失败，可在这里添加一些错误处理，比如记录日志
-            return;
-        }
-        const isExpanded = header.getAttribute('aria-expanded') === 'true';
-        header.setAttribute('aria-expanded',!isExpanded);
-        content.style.display = isExpanded? 'none' : 'block';
+        // 切换章节显示/隐藏
+        function toggleSection(targetId, header) {
+            const content = document.getElementById(targetId);
+            if (!content) {
+                return;
+            }
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            header.setAttribute('aria-expanded',!isExpanded);
+            content.style.display = isExpanded? 'none' : 'block';
 
-        // 移除所有章节标题的 active 类
-        const allHeaders = document.querySelectorAll('.section-container h2');
-        allHeaders.forEach(h => {
-            if (h!== header) {
-                h.classList.remove('active');
+            // 移除所有章节标题的 active 类
+            const allHeaders = document.querySelectorAll('.section-container h2');
+            allHeaders.forEach(h => {
+                if (h!== header) {
+                    h.classList.remove('active');
+                }
+            });
+
+            // 切换当前点击标题的 active 类
+            header.classList.toggle('active');
+        }
+
+        // 切换歌词显示/隐藏
+        function toggleLyrics(event, lyricsId, albumClass) {
+            event.preventDefault();
+            // 隐藏当前专辑下的所有歌词详情
+            const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
+            albumLyrics.forEach(lyrics => {
+                lyrics.style.display = 'none';
+            });
+
+            // 显示目标歌词
+            const targetLyrics = document.getElementById(lyricsId);
+            if (targetLyrics) {
+                targetLyrics.style.display = 'block';
+            }
+
+            // 移除所有歌词标题的 active 类
+            const allLyricsHeaders = document.querySelectorAll('.album ol li a');
+            allLyricsHeaders.forEach(h => {
+                if (h.getAttribute('data-lyrics-id')!== lyricsId) {
+                    h.classList.remove('active');
+                }
+            });
+
+            // 找到当前点击的歌词标题并添加 active 类
+            const currentLyricsHeader = document.querySelector(`.album ol li a[data-lyrics-id="${lyricsId}"]`);
+            if (currentLyricsHeader) {
+                currentLyricsHeader.classList.add('active');
+            }
+        }
+
+        // 处理留言表单提交
+        const messageForm = document.getElementById('messageForm');
+        messageForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            if (name && message) {
+                alert('留言提交成功！感谢您的留言。');
+                // 清空表单
+                this.reset();
+            } else {
+                alert('请填写姓名和留言内容。');
             }
         });
+    </script>
+</body>
 
-        // 切换当前点击标题的 active 类
-        header.classList.toggle('active');
-    }
-
-    // 切换歌词显示/隐藏
-    function toggleLyrics(lyricsId, albumClass) {
-        // 隐藏当前专辑下的所有歌词详情
-        const albumLyrics = document.querySelectorAll(`.${albumClass}.lyrics-details`);
-        albumLyrics.forEach(lyrics => {
-            lyrics.style.display = 'none';
-        });
-
-        // 显示目标歌词
-        const targetLyrics = document.getElementById(lyricsId);
-        if (targetLyrics) {
-            targetLyrics.style.display = 'block';          
-        }
-
-        // 移除所有歌词标题的 active 类
-        const allLyricsHeaders = document.querySelectorAll('.album ol li a');
-        allLyricsHeaders.forEach(h => {
-            if (h.href.split('#')[1]!== lyricsId) {
-                h.classList.remove('active');
-            }
-        });
-
-        // 找到当前点击的歌词标题并添加 active 类
-        const currentLyricsHeader = document.querySelector(`.album ol li a[href="#${lyricsId}"]`);
-        if (currentLyricsHeader) {
-            currentLyricsHeader.classList.add('active');
-        }
-    }
-</script>
+</html>
