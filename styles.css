@@ -41,7 +41,7 @@ header {
     animation: slideDown 1s ease-in-out forwards;
     position: relative;
     z-index: 1;
-    border-bottom: 2px solid #87CEEB; /* 修改边框样式 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0 0 20px 20px;
 }
 
@@ -60,7 +60,6 @@ header {
     background: rgba(0, 0, 50, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid #87CEEB; /* 添加边框 */
 }
 
 /* 章节标题样式 */
@@ -72,7 +71,6 @@ header {
     background: linear-gradient(to right, #e0e0e0, #87CEEB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border: 2px solid #87CEEB; /* 添加边框 */
 }
 
 .section-container h2:hover {
@@ -93,8 +91,6 @@ header {
     background: rgba(0, 0, 40, 0.8);
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
-    border: 2px solid #87CEEB; /* 添加边框 */
-    border-top: none; /* 去除顶部边框，避免和标题边框重叠 */
 }
 
 .section-container h2[aria-expanded="true"] + .section-content {
@@ -129,7 +125,6 @@ header {
     background: rgba(0, 0, 40, 0.8);
     border-radius: 10px;
     margin-top: 1em;
-    border: 2px solid #87CEEB; /* 添加边框 */
 }
 
 .lyrics-details.show {
@@ -143,7 +138,6 @@ header {
     /* 留言部分框内背景 */
     background: rgba(0, 0, 55, 0.8);
     border-radius: 20px;
-    border: 2px solid #87CEEB; /* 添加边框 */
 }
 
 /* 留言表单样式 */
@@ -182,7 +176,6 @@ footer {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid #87CEEB; /* 添加边框 */
 }
 
 /* 响应式设计 */
@@ -190,7 +183,7 @@ footer {
    .main-container {
         width: 95%;
     }
-    footer {
+   .footer {
         width: 95%;
     }
 }
